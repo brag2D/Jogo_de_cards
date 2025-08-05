@@ -1,0 +1,138 @@
+:root {
+    --bg-color: #f8f9fa;
+    --dark-text: #212529;
+    --light-text: #f8f9fa;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.5s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--dark-text);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.app-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-text);
+}
+
+.app-subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.flashcard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* Flashcard styles */
+.flashcard {
+    perspective: 1000px;
+    height: 400px;
+    position: relative;
+}
+
+/* Hide checkbox but keep it functional */
+.flashcard-checkbox {
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Card container */
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: var(--transition);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+/* Flip when checkbox is checked */
+.flashcard-checkbox:checked ~ .flashcard-inner {
+    transform: rotateY(180deg);
+}
+/* Shared face styles */
+.flashcard-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow);
+    text-align: center;
+    color: var(--light-text);
+    border: 2px solid #4361ee;
+}
+
+/* Front face specific styles */
+.flashcard-front {
+    background-image: url('bg-desktop.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Back face specific styles */
+.flashcard-back {
+    background-color: #3a0ca3;
+    transform: rotateY(180deg);
+}
+
+/* Card content styling */
+.flashcard h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.flashcard p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .flashcard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .flashcard {
+        height: 350px;
+    }
+    
+    .app-title {
+        font-size: 2rem;
+    }
+}

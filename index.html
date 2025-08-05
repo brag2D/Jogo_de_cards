@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Funcionam as Cartas Interativas</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Seção principal -->
+    <main class="app-container">
+        <!-- header -->
+        <header class="app-header">
+            <h1 class="app-title">Como Funcionam as Cartas</h1>
+            <p class="app-subtitle">Clique nas cards para entender a animação 3D</p>
+        </header>
+
+        <!-- ÁREA PRINCIPAL -->
+        <section class="flashcard-grid">
+            <!-- Card 1 - Propriedade CSS -->
+            <article class="flashcard">
+                <input type="checkbox" id="card1" class="flashcard-checkbox">
+                <div class="flashcard-inner">
+                    <label for="card1" class="flashcard-face flashcard-front">
+                        <h2>1.</h2>
+                        <p>Qual a propriedade CSS que permite as cartas "virarem"?</p>
+                    </label>
+                    <div class="flashcard-face flashcard-back">
+                        <p>transform: rotateY(180deg);</p>
+                        <p>Esta propriedade gira o elemento 180 graus no eixo Y, criando o efeito de virar.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 - Elemento HTML -->
+            <article class="flashcard">
+                <input type="checkbox" id="card2" class="flashcard-checkbox">
+                <div class="flashcard-inner">
+                    <label for="card2" class="flashcard-face flashcard-front">
+                        <h2>2.</h2>
+                        <p>Qual elemento HTML é usado para criar a interatividade de clique sem JavaScript?</p>
+                    </label>
+                    <div class="flashcard-face flashcard-back">
+                        <p>&lt;input type="checkbox" id="..." class="..."&gt;</p>
+                        <p>O checkbox escondido permite alternar o estado (marcado/não marcado) com um clique.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 - Seletor CSS -->
+            <article class="flashcard">
+                <input type="checkbox" id="card3" class="flashcard-checkbox">
+                <div class="flashcard-inner">
+                    <label for="card3" class="flashcard-face flashcard-front">
+                        <h2>3.</h2>
+                        <p>Qual seletor CSS é usado para detectar quando o checkbox está marcado?</p>
+                    </label>
+                    <div class="flashcard-face flashcard-back">
+                        <p>.flashcard-checkbox:checked ~ .flashcard-inner</p>
+                        <p>O seletor :checked aplica estilos quando o checkbox está marcado, e o ~ seleciona o irmão
+                            seguinte.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 - Preservação 3D -->
+            <article class="flashcard">
+                <input type="checkbox" id="card4" class="flashcard-checkbox">
+                <div class="flashcard-inner">
+                    <label for="card4" class="flashcard-face flashcard-front">
+                        <h2>4.</h2>
+                        <p>Qual propriedade CSS preserva o espaço 3D durante a animação?</p>
+                    </label>
+                    <div class="flashcard-face flashcard-back">
+                        <p>transform-style: preserve-3d;</p>
+                        <p>Esta propriedade permite que os elementos filhos mantenham sua posição no espaço 3D.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 5 - Efeito de Perspectiva -->
+            <article class="flashcard">
+                <input type="checkbox" id="card5" class="flashcard-checkbox">
+                <div class="flashcard-inner">
+                    <label for="card5" class="flashcard-face flashcard-front">
+                        <h2>5.</h2>
+                        <p>Como é criado o efeito de perspectiva 3D?</p>
+                    </label>
+                    <div class="flashcard-face flashcard-back">
+                        <p>perspective: 1000px;</p>
+                        <p>Esta propriedade no elemento pai define a intensidade do efeito 3D (quanto menor o valor,
+                            mais exagerado o efeito).</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6 - Esconder o verso -->
+            <article class="flashcard">
+                <input type="checkbox" id="card6" class="flashcard-checkbox">
+                <div class="flashcard-inner">
+                    <label for="card6" class="flashcard-face flashcard-front">
+                        <h2>6.</h2>
+                        <p>Como evitamos que o verso da carta seja visível antes de virar?</p>
+                    </label>
+                    <div class="flashcard-face flashcard-back">
+                        <p>backface-visibility: hidden;</p>
+                        <p>Esta propriedade esconde a "parte de trás" do elemento quando ele está virado para longe do
+                            espectador.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 7 - Transição suave -->
+            <article class="flashcard">
+                <input type="checkbox" id="card7" class="flashcard-checkbox">
+                <div class="flashcard-inner">
+                    <label for="card7" class="flashcard-face flashcard-front">
+                        <h2>7.</h2>
+                        <p>Como criamos uma animação suave ao invés de uma mudança brusca?</p>
+                    </label>
+                    <div class="flashcard-face flashcard-back">
+                        <p>transition: all 0.5s ease;</p>
+                        <p>Esta propriedade anima suavemente as mudanças de estilo ao longo de 0.5 segundos com curva de
+                            aceleração/desaceleração.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 8 - Posicionamento das faces -->
+            <article class="flashcard">
+                <input type="checkbox" id="card8" class="flashcard-checkbox">
+                <div class="flashcard-inner">
+                    <label for="card8" class="flashcard-face flashcard-front">
+                        <h2>8.</h2>
+                        <p>Como as duas faces da carta ficam perfeitamente alinhadas?</p>
+                    </label>
+                    <div class="flashcard-face flashcard-back">
+                        <p>position: absolute;</p>
+                        <p>Ambas as faces usam position: absolute dentro de um container com position: relative,
+                            ocupando exatamente o mesmo espaço.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 9 - Estrutura HTML -->
+            <article class="flashcard">
+                <input type="checkbox" id="card9" class="flashcard-checkbox">
+                <div class="flashcard-inner">
+                    <label for="card9" class="flashcard-face flashcard-front">
+                        <h2>9.</h2>
+                        <p>Qual a estrutura HTML básica para criar este efeito?</p>
+                    </label>
+                    <div class="flashcard-face flashcard-back">
+                        <p>&lt;article class="flashcard"&gt;<br>
+                            &nbsp;&nbsp;&lt;input type="checkbox"&gt;<br>
+                            &nbsp;&nbsp;&lt;div class="flashcard-inner"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="flashcard-front"&gt;&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="flashcard-back"&gt;&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&lt;/div&gt;<br>
+                            &lt;/article&gt;</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 10 - Funcionamento geral -->
+            <article class="flashcard">
+                <input type="checkbox" id="card10" class="flashcard-checkbox">
+                <div class="flashcard-inner">
+                    <label for="card10" class="flashcard-face flashcard-front">
+                        <h2>10.</h2>
+                        <p>Resumo do funcionamento:</p>
+                    </label>
+                    <div class="flashcard-face flashcard-back">
+                        <p>1. O clique marca/desmarca o checkbox<br>
+                            2. O seletor :checked detecta a mudança<br>
+                            3. Aplica transform: rotateY(180deg) no container<br>
+                            4. As propriedades 3D criam o efeito de profundidade<br>
+                            5. A transição suaviza a animação</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
